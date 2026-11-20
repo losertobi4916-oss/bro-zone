@@ -1,1 +1,462 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>BRO ZONE | Your World</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #090909;
+  color: white;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  padding: 22px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: #ff3030;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: white;
+}
+
+.menu {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 55px 18px 35px;
+  background: radial-gradient(ellipse at top, #451010 0%, #090909 70%);
+}
+
+.tag {
+  display: inline-block;
+  color: #ff5555;
+  border: 1px solid #772020;
+  border-radius: 30px;
+  padding: 7px 15px;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: 43px;
+  margin: 22px 0 12px;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: #ff3030;
+}
+
+.hero p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.section {
+  padding: 20px 17px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 21px;
+  margin-bottom: 17px;
+}
+
+.section-title span {
+  color: #ff3030;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.card {
+  background: linear-gradient(145deg, #1d1d1d, #111);
+  border: 1px solid #303030;
+  border-radius: 17px;
+  padding: 20px 15px;
+  cursor: pointer;
+  transition: .2s;
+  min-height: 155px;
+}
+
+.card:active {
+  transform: scale(.97);
+  border-color: #ff3030;
+}
+
+.card .emoji {
+  font-size: 32px;
+  margin-bottom: 13px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.card .arrow {
+  color: #ff4242;
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+.panel {
+  display: none;
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 18px;
+  width: 92%;
+}
+
+.panel.active {
+  display: block;
+}
+
+.panel h2 {
+  color: #ff4545;
+  margin-bottom: 15px;
+}
+
+.panel p {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #e92727;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.option {
+  display: block;
+  width: 100%;
+  background: #242424;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 13px;
+  text-align: left;
+  margin: 9px 0;
+  cursor: pointer;
+}
+
+.option:active {
+  background: #592020;
+}
+
+.result {
+  color: #ff5555;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 15px;
+  border-top: 1px solid #292929;
+  color: #777;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+footer strong {
+  color: #ff3333;
+}
+
+@media(max-width:350px) {
+  .hero h1 {font-size: 34px;}
+  .grid {grid-template-columns: 1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BRO <span>ZONE</span> 🔥</div>
+  <div class="menu">THE FUN CLUB</div>
+</header>
+
+<section class="hero">
+  <div class="tag">WELCOME TO YOUR ZONE</div>
+
+  <h1>LEVEL UP<br>YOUR <span>VIBE.</span></h1>
+
+  <p>
+    No boring moments here.<br>
+    Play, discover and have fun!
+  </p>
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    EXPLORE <span>YOUR ZONE</span>
+  </h2>
+
+  <div class="grid">
+
+    <div class="card" onclick="openPanel('personality')">
+      <div class="emoji">🧠</div>
+      <h3>Personality Test</h3>
+      <p>Discover your personality.</p>
+      <div class="arrow">PLAY NOW →</div>
+    </div>
+
+    <div class="card" onclick="openPanel('friendship')">
+      <div class="emoji">🤝</div>
+      <h3>Friendship Quiz</h3>
+      <p>Test your friendship knowledge.</p>
+      <div class="arrow">PLAY NOW →</div>
+    </div>
+
+    <div class="card" onclick="openPanel('challenge')">
+      <div class="emoji">🎯</div>
+      <h3>Funny Challenge</h3>
+      <p>Try a random fun challenge.</p>
+      <div class="arrow">PLAY NOW →</div>
+    </div>
+
+    <div class="card" onclick="openPanel('username')">
+      <div class="emoji">⚡</div>
+      <h3>Name Generator</h3>
+      <p>Create your cool username.</p>
+      <div class="arrow">PLAY NOW →</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PERSONALITY -->
+
+<div class="panel" id="personality">
+  <h2>🧠 Personality Test</h2>
+  <p>What do you enjoy most?</p>
+
+  <button class="option" onclick="personalityResult('Leader 👑')">
+    Leading the team
+  </button>
+
+  <button class="option" onclick="personalityResult('Creative Mind 🎨')">
+    Creating new things
+  </button>
+
+  <button class="option" onclick="personalityResult('Chill Legend 😎')">
+    Relaxing with friends
+  </button>
+
+  <button class="option" onclick="personalityResult('Explorer 🚀')">
+    Exploring new places
+  </button>
+
+  <div class="result" id="personalityResult"></div>
+</div>
+
+<!-- FRIENDSHIP -->
+
+<div class="panel" id="friendship">
+  <h2>🤝 Friendship Quiz</h2>
+  <p>What makes a great friendship?</p>
+
+  <button class="option" onclick="friendResult('A')">
+    A. Trust and respect
+  </button>
+
+  <button class="option" onclick="friendResult('B')">
+    B. Expensive gifts
+  </button>
+
+  <button class="option" onclick="friendResult('C')">
+    C. Popularity
+  </button>
+
+  <div class="result" id="friendResult"></div>
+</div>
+
+<!-- CHALLENGE -->
+
+<div class="panel" id="challenge">
+  <h2>🎯 Funny Challenge</h2>
+  <p id="challengeText">Ready for a random challenge?</p>
+
+  <button class="btn" onclick="newChallenge()">
+    GET A CHALLENGE 🔥
+  </button>
+</div>
+
+<!-- USERNAME -->
+
+<div class="panel" id="username">
+  <h2>⚡ Username Generator</h2>
+  <p>Enter your nickname:</p>
+
+  <input id="nickname" placeholder="Enter your name">
+
+  <button class="btn" onclick="generateName()">
+    GENERATE USERNAME
+  </button>
+
+  <div class="result" id="nameResult"></div>
+</div>
+
+<footer>
+  <strong>BRO ZONE 🔥</strong>
+  <p style="margin-top:10px;">
+    Your World. Your Vibe. Your Rules.
+  </p>
+  <p style="margin-top:10px;">
+    Made for fun © 2026
+  </p>
+</footer>
+
+<script>
+
+function openPanel(id) {
+
+  document.querySelectorAll(".panel").forEach(p => {
+    p.classList.remove("active");
+  });
+
+  const panel = document.getElementById(id);
+  panel.classList.add("active");
+
+  panel.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+function personalityResult(result) {
+  document.getElementById("personalityResult").innerText =
+    "Your vibe: " + result;
+}
+
+function friendResult(answer) {
+
+  let result;
+
+  if(answer === "A") {
+    result = "Correct! Trust makes a true friendship ❤️";
+  } else {
+    result = "Not quite! Trust and respect matter most 🤝";
+  }
+
+  document.getElementById("friendResult").innerText = result;
+}
+
+const challenges = [
+  "Tell your friend your funniest nickname 😂",
+  "Describe your day using only 3 words!",
+  "Say 3 nice things about a friend ❤️",
+  "Make up a superhero name for yourself!",
+  "Try to remember 5 things in 10 seconds!",
+  "Create a funny slogan for your friend group!",
+  "Share your funniest harmless memory!",
+  "Invent a name for your imaginary team!"
+];
+
+function newChallenge() {
+
+  const random = Math.floor(
+    Math.random() * challenges.length
+  );
+
+  document.getElementById("challengeText").innerText =
+    challenges[random];
+}
+
+function generateName() {
+
+  const name = document.getElementById("nickname")
+    .value.trim();
+
+  if(!name) {
+    document.getElementById("nameResult").innerText =
+      "Enter your nickname first!";
+    return;
+  }
+
+  const words = [
+    "Legend",
+    "Shadow",
+    "Blaze",
+    "Storm",
+    "Rider",
+    "Vortex",
+    "Nova",
+    "Phantom"
+  ];
+
+  const random = Math.floor(
+    Math.random() * words.length
+  );
+
+  document.getElementById("nameResult").innerText =
+    name + words[random];
+}
+
+</script>
+
+</body>
+</html>
